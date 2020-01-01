@@ -4,8 +4,8 @@ import * as dotenv from 'dotenv';
 dotenv.config();
 
 const LEETCODE_BASE_URL = 'https://leetcode.com/';
-const LEETCODE_ALL_QUESTION_URL = `${LEETCODE_BASE_URL}api/problems/all/`;
-const LEETCODE_RECOMMENDED_LIST_URL = `${LEETCODE_BASE_URL}list/api/get_list/xo2bgr0r/`;
+const LEETCODE_ALL_QUESTION_URL = '${LEETCODE_BASE_URL}api/problems/all/';
+const LEETCODE_RECOMMENDED_LIST_URL = '${LEETCODE_BASE_URL}list/api/get_list/xo2bgr0r/';
 
 const { SLACK_WEBHOOK_URL } = process.env;
 
@@ -76,8 +76,8 @@ function formatText(
   dir: string,
   difficulty: string,
 ): string {
-  const link = `${LEETCODE_BASE_URL}problems/${dir}/`;
-  return `${num}. ${title} - ${difficulty}\n${link}`;
+  const link = '${LEETCODE_BASE_URL}problems/${dir}/';
+  return '${num}. ${title} - ${difficulty}\n${link}';
 }
 
 // Post the generated message to Slack
