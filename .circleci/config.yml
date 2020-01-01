@@ -12,7 +12,7 @@ jobs:
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
       # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/mongo:3.4.4.5
+      # - image: circleci/mongo:3.4.4
 
     working_directory: ~/repo
 
@@ -34,18 +34,17 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run!
-      - run: yarn run
+      - run: yarn ts-node index.ts
 
 workflows:
   version: 2
   scheduled_workflow:
     triggers:
       - schedule:
-          cron: "19 * * * *"
+          cron: "28 * * * *"
           filters:
             branches:
               only:
                 - master
     jobs:
       - post_question
-
