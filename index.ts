@@ -70,13 +70,18 @@ function pickQuestion(data) {
 }
 
 // Format message
-function formatText(num,title,dir,difficulty){
+function formatText(
+  num: number,
+  title: string,
+  dir: string,
+  difficulty: string,
+): string {
   const link = `${LEETCODE_BASE_URL}problems/${dir}/`;
   return `${num}. ${title} - ${difficulty}\n${link}`;
 }
 
 // Post the generated message to Slack
-async function postQuestion(text) {
+async function postQuestion(text: string) {
   const { status, config } = await axios({
     method: 'post',
     url: SLACK_WEBHOOK_URL,
