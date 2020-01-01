@@ -34,14 +34,14 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run!
-      - run: yarn run index.ts
+      - run: yarn run index.js
 
 workflows:
   version: 2
   scheduled_workflow:
     triggers:
       - schedule:
-          cron: "5 * * * *"
+          cron: "12 * * * *"
           filters:
             branches:
               only:
