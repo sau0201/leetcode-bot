@@ -27,6 +27,7 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
+      - run: node install
 
       - save_cache:
           paths:
@@ -34,14 +35,14 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run!
-      - run: yarn ts-node index.ts
+      - run: node index.ts
 
 workflows:
   version: 2
   scheduled_workflow:
     triggers:
       - schedule:
-          cron: "52 17 * * *"
+          cron: "0 * * * *"
           filters:
             branches:
               only:
