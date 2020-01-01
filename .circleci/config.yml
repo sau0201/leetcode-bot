@@ -27,6 +27,7 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
+      - run: npm install -D ts-node
 
       - save_cache:
           paths:
@@ -41,7 +42,7 @@ workflows:
   scheduled_workflow:
     triggers:
       - schedule:
-          cron: "27 * * * *"
+          cron: "32 * * * *"
           filters:
             branches:
               only:
