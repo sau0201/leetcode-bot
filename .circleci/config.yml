@@ -41,7 +41,7 @@ workflows:
   scheduled_workflow:
     triggers:
       - schedule:
-          cron: "0 15 * * 1-5"
+          cron: "0 18 * * 1-7"
           filters:
             branches:
               only:
