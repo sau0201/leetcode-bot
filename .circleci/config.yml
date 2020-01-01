@@ -27,7 +27,6 @@ jobs:
             - v1-dependencies-
 
       - run: yarn install
-      - run: node install
 
       - save_cache:
           paths:
@@ -35,7 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run!
-      - run: node index.ts
+      - run: yarn run index.ts
 
 workflows:
   version: 2
