@@ -38,13 +38,13 @@ jobs:
 
 workflows:
   version: 2
-  scheduled_workflow:
+  nightly:
     triggers:
       - schedule:
           cron: "0 18 * * 1-7"
-            filters:
-                branches:
-                only:
-                    - master
+          filters:
+            branches:
+              only:
+                - master
     jobs:
       - post_question
