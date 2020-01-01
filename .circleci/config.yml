@@ -37,7 +37,7 @@ jobs:
       - run: yarn ts-node index.ts
 
 workflows:
-   version: 3
+   version: 2
    nightly:
      triggers:
        - schedule:
