@@ -34,7 +34,7 @@ jobs:
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run!
-      - run: yarn run index
+      - run: yarn run
 
 workflows:
   version: 2
