@@ -37,15 +37,15 @@ jobs:
       - run: yarn ts-node index.ts
 
 workflows:
-   version: 2
-   nightly:
-     triggers:
-       - schedule:
-           cron: "0 18 * * *"
-           filters:
-             branches:
-               only:
-                 - master
-     jobs:
-       - post_question
+  version: 2
+  scheduled_workflow:
+    triggers:
+      - schedule:
+          cron: "0 18 * * *"
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - post_question
 
